@@ -1,0 +1,71 @@
+<h2>Frontend Users</h2>
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Credit Card</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of frontendUsers | sort:'firstName':false; let i = index">
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.creditCard.toString() | creditCardFormatter }}</td>
+      <td>
+        <button (click)="deleteFrontendUser(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Backend Users</h2>
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Credit Card</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of backendUsers | sort:'firstName':false; let i = index">
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.creditCard.toString() | creditCardFormatter }}</td>
+      <td>
+        <button (click)="deleteBackendUser(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Fullstack Users</h2>
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Credit Card</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of fullstackUsers | sort:'firstName':false; let i = index">
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.creditCard.toString() | creditCardFormatter }}</td>
+      <td>
+        <button (click)="deleteFullstackUser(i)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,81 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-fields">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" formControlName="firstName" />
+    <div class="error-message" *ngIf="isControlInvalid('firstName', 'required')">
+      First name is required.
+    </div>
+  </div>
+
+  <div class="form-fields">
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" formControlName="lastName"
+     />
+    <div class="error-message" *ngIf="isControlInvalid('lastName', 'required')">
+      Last name is required.
+    </div>
+  </div>
+
+  <div class="form-fields">
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="email" />
+    <div class="error-message" *ngIf="isControlInvalid('email', 'required')">Email is required.</div>
+    <div class="error-message" *ngIf="isControlInvalid('email', 'email')">
+      Please enter a valid email address.
+    </div>
+  </div>
+  <div class="form-fields">
+    <label for="password">Password:</label>
+    <input
+      type="password"
+      id="password"
+      formControlName="password"
+      (click)="markControlAsTouched('password')"
+    />
+    <div class="error-message" *ngIf="isControlInvalid('password', 'required')">
+      Password is required.
+    </div>
+    <div class="error-message" *ngIf="isControlInvalid('password', 'minlength')">
+      Password must be at least 8 characters long.
+    </div>
+
+    <div class="form-fields">
+      <label for="creditCard">Credit Card Number:</label>
+      <input type="text" id="creditCard" formControlName="creditCard" />
+      <div class="error-message" *ngIf="isControlInvalid('creditCard', 'required')">
+        Credit card number is required.
+      </div>
+      <div class="error-message" *ngIf="isControlInvalid('creditCard', 'pattern')">
+        Invalid credit card number.
+      </div>
+    </div>
+  </div>
+  <div class="form-fields">
+    <label>Job Position:</label>
+    <input
+      type="radio"
+      id="FrontEnd"
+      name="jobPosition"
+      value="FrontEnd"
+      formControlName="jobPosition"
+    />
+    <label for="frontend">Frontend</label>
+    <input
+      type="radio"
+      id="BackEnd"
+      name="jobPosition"
+      value="BackEnd"
+      formControlName="jobPosition"
+    />
+    <label for="backend">Backend</label>
+    <input
+      type="radio"
+      id="FullStack"
+      name="jobPosition"
+      value="FullStack"
+      formControlName="jobPosition"
+    />
+    <label for="fullstack">Fullstack</label>
+  </div>
+  <button type="submit" [disabled]="!form.valid">Submit</button>
+</form>
