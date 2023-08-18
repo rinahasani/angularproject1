@@ -14,7 +14,7 @@
       <td>{{ user.firstName }}</td>
       <td>{{ user.lastName }}</td>
       <td>{{ user.email }}</td>
-      <td>{{ user.creditCard.toString() | creditCardFormatter }}</td>
+      <td>{{ user.creditCard | creditCardFormatter }}</td>
       <td>
         <button (click)="deleteFrontendUser(i)">Delete</button>
       </td>
@@ -38,7 +38,7 @@
       <td>{{ user.firstName }}</td>
       <td>{{ user.lastName }}</td>
       <td>{{ user.email }}</td>
-      <td>{{ user.creditCard.toString() | creditCardFormatter }}</td>
+      <td>{{ user.creditCard | creditCardFormatter }}</td>
       <td>
         <button (click)="deleteBackendUser(i)">Delete</button>
       </td>
@@ -62,7 +62,7 @@
       <td>{{ user.firstName }}</td>
       <td>{{ user.lastName }}</td>
       <td>{{ user.email }}</td>
-      <td>{{ user.creditCard.toString() | creditCardFormatter }}</td>
+      <td>{{ user.creditCard | creditCardFormatter }}</td>
       <td>
         <button (click)="deleteFullstackUser(i)">Delete</button>
       </td>
